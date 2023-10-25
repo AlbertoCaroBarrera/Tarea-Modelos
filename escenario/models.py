@@ -9,6 +9,15 @@ class Usuario(models.Model):
     contraseña = models.CharField(max_length=200)
     fecha_registro = models.DateTimeField(default = timezone.now)
     
+
+class Proyecto(models.Model):
+    nombre = models.CharField(max_length=200)
+    descripcion = models.TextField()
+    duracion = models.FloatField()
+    fecha_inicio = models.DateTimeField(default = timezone.now)
+    fecha_fin = models.DateTimeField()
+    usuario = models.ManyToManyField(Usuario, related_name="usuario") 
+    creador = models.OneToOneField(Usuario,on_delete=models.CASCADE)
     
 class Tarea(models.Model):
     titulo = models.CharField(max_length=200)
@@ -20,16 +29,8 @@ class Tarea(models.Model):
     hora_vencimiento = models.TimeField()
     creador_tarea = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name="creador_tarea")
     usuarios_asignados = models.ManyToManyField(Usuario, through='Asignacion_tarea', related_name="usuarios_asignados")
+    proyecto = models.ForeignKey(Proyecto,on_delete=models.CASCADE)
 
-class Proyecto(models.Model):
-    nombre = models.CharField(max_length=200)
-    descripcion = models.TextField()
-    duracion = models.FloatField()
-    fecha_inicio = models.DateTimeField(default = timezone.now)
-    fecha_fin = models.DateTimeField()
-    usuario = models.ManyToManyField(Usuario, related_name="usuario") 
-    creador = models.OneToOneField(Usuario,on_delete=models.CASCADE,related_name="creador")
-    tareas = models.ManyToManyField(Tarea)
 
 class Etiqueta(models.Model):
     nombre = models.CharField(max_length=200,unique=True)
