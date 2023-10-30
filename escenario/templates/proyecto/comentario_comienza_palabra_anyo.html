@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comentario comienza palabra anyo</title>
+</head>
+<body>
+    {% for comentario in comentario_comienza_palabra_anyo %}
+        {{comentario.contenido}}
+        {{comentario.fecha_comentario}}
+        <br>
+    {%endfor%}
+</body>
+</html>

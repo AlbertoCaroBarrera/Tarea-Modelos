@@ -20,4 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include("escenario.urls"))
 ]
-
+handler404 = "escenario.views.mi_error_404"
+handler400= "escenario.views.mi_error_400"
+handler403 = "escenario.views.mi_error_403"
+handler500 = "escenario.views.mi_error_500"

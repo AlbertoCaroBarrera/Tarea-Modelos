@@ -8,6 +8,27 @@
 <body>
     
     <h1>Listado de enlaces</h1>
-    <a href="{%url 'lista_proyectos'%}">Proyectos</a>
+    <ul>
+        <li><a href="{%url 'lista_proyectos'%}">Proyectos</a></li>
+        
+        <li><a href="{%url 'tareas' 2 %}">Todas las tareas asociadas al proyecto numero 2 ordenadas por fecha de creacion descendente</a></li>
+
+        <li><a href="{%url 'usuarios' 3%}">Todos los usuarios asignados a la tarea 3 ordenados por fecha de asignacion ascendente</a></li>
+        
+        <li><a href="{%url 'tareas_con_observaciones' 'other'%}">Tareas que tengan de texto other</a></li>
+
+        <li><a href="{%url 'tareas_completadas_entre_años' 2019 2024 %}">Todas las tareas que se han creado entre 2019 y 2024 y el estado sea “Completada”</a></li>
+        
+        <li><a href="{%url 'ultimo_usuario_comentado' 2%}"> Ultimo usuario que ha comentado en la tarea 2</a></li>
+
+        <li><a href="{%url 'comentario_comienza_palabra_anyo' 'Job' 2023 %}"> Comentario que contiene la palabra 'Job' y en 2023</a></li>
+
+        <li><a href="{%url 'etiquetas_tareas_proyecto' 3 %}">Etiquetas de todas las tareas del proyecto 3</a></li>
+
+        <li><a href="{%url 'usuarios_sin_tarea' 3 %}">Usuarios que no estan en la tarea 3</a></li>
+
+
+    </ul>
+
 </body>
 </html>

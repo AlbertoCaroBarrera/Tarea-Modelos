@@ -15,6 +15,16 @@
         <p>Fecha Inicio: {{proyecto.fecha_inicio}}</p>
         <p>Fecha Fin: {{proyecto.fecha_fin}}</p>
         <h3>Usuario</h3>
+            {% for usuario in proyecto.usuario.all %}
+                <ul>
+                    <li>{{usuario.nombre}}</li>
+                </ul>
+            {%endfor%}
+        <p>Usuario creador: {{proyecto.creador.nombre}} </p>
+
+        <p>Tareas:<a href="{%url 'tareas' id_proyecto=proyecto.id %}">Tareas</a></p>
+        
+        
 
     </div>
     {%endfor%}
