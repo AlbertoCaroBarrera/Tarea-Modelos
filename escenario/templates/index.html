@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi primer html</title>
-</head>
-<body>
-    
+{% extends 'principal.html' %}
+{% block contenido %}
+
     <h1>Listado de enlaces</h1>
     <a href="{%url 'lista_proyectos'%}">Proyectos</a>
-</body>
-</html>
+    <ul>
+        <li><a href="{% url 'dame_tareas_texto' 'a' %}">Tareas que contienen el texto 'a'</a></li>
+    </ul>
+    
+{% endblock %}
