@@ -1,0 +1,10 @@
+{% extends 'principal.html' %}
+{% block cabecera %}
+    Este es mi etiqueta
+{% endblock cabecera %}
+{% block contenido %}
+    <h1>Etiquetas del proyecto:</h1>
+    {% for etiqueta in etiquetas_tareas_proyecto %}
+        <p>{{etiqueta.nombre}} </p>
+    {%endfor%}
+{% endblock %}  

@@ -72,3 +72,15 @@ header{
 .menu li:hover .submenu{
 	visibility: visible;
 }
+
+/*pie de pagina*/
+
+.pie_pag {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #689F38;
+	color: white;
+	text-align: center;
+}

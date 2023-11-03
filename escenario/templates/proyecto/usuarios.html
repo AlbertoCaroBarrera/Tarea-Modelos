@@ -1,0 +1,9 @@
+{% extends 'principal.html' %}
+{% block cabecera %}
+    Usuarios
+{% endblock cabecera %}
+{% block contenido %}
+    {% for usuario in mostrar_usuarios %}
+        <p>{{usuario.usuario.nombre}}</p>
+    {%endfor%}
+{% endblock %}  

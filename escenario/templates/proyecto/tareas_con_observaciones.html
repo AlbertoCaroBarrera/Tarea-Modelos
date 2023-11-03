@@ -1,0 +1,26 @@
+{% extends 'principal.html' %}
+{% block cabecera %}
+    Estas son tareas con observaciones
+{% endblock cabecera %}
+{% block contenido %}
+    <h1>Tareas con Observaciones que contienen "{{ texto }}"</h1>
+   
+    <ul>
+        {% for tarea in tareas %}
+            <li>
+                <strong>{{ tarea.titulo }}</strong><br>
+                Descripción: {{ tarea.descripcion }}<br>
+                Prioridad: {{ tarea.prioridad }}<br>
+                Estado: {{ tarea.estados }}<br>
+                Asignada a:
+                <ul>
+                    {% for asignacion_tarea in tarea.asignacion_tarea_set.all %}
+                        <li>{{ asignacion_tarea.usuario.nombre }} - Observaciones: {{ asignacion_tarea.observaciones }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% empty %}
+            <p>No se encontraron tareas con observaciones que contienen "{{ texto }}"</p>
+        {% endfor %}
+    </ul>
+{% endblock %}  

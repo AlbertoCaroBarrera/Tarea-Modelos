@@ -5,14 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css'%}">
-    <title>Mi primer html</title>
+    <script src="{%static 'js/archivo.js'%}"></script>
+    <title>
+        
+        {% block cabecera %}
+
+        {% endblock cabecera %}
+    </title>
 </head>
 <body>
+    
     {% include 'menu/menu.html' %}
+    <img src="{% static 'imagenes/imagen.png' %}" alt="django">
 
 
     {% block contenido %}
     {% endblock %}
+
+    {%include 'pie_de_pagina/pie.html'%}
 
 </body>
 </html>

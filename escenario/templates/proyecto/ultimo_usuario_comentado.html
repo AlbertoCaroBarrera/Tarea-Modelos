@@ -1,0 +1,8 @@
+{% extends 'principal.html' %}
+{% block cabecera %}
+    Este es mi ultimo usuario
+{% endblock cabecera %}
+{% block contenido %}
+    <h1>Ultimo usuario comentado en la tarea: {{ultimo_usuario_comentado.tarea.titulo}} </h1>
+    {{ultimo_usuario_comentado.autor.nombre}}
+{% endblock %}  

@@ -17,15 +17,20 @@ class Proyecto(models.Model):
     fecha_inicio = models.DateTimeField(default = timezone.now)
     fecha_fin = models.DateTimeField()
     usuario = models.ManyToManyField(Usuario, related_name="usuario") 
-    creador = models.OneToOneField(Usuario,on_delete=models.CASCADE)
+    creador = models.ForeignKey(Usuario,on_delete=models.CASCADE,related_name="creador")
     
 class Tarea(models.Model):
     titulo = models.CharField(max_length=200)
     descripcion = models.TextField()
     prioridad = models.IntegerField()
-    estado = [('PE','Pendiente'),('PR','Progreso'),('Co','Completada')]
+    ESTADOS = [('PE','Pendiente'),('PR','Progreso'),('Co','Completada')]
+    estado = models.CharField(
+                            max_length=3,
+                            choices=ESTADOS,
+                            default='PEN',
+    )
     completada = models.BooleanField()
-    fecha_creacion = models.DateTimeField(default = timezone.now)
+    fecha_creacion = models.DateField()
     hora_vencimiento = models.TimeField()
     creador_tarea = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name="creador_tarea")
     usuarios_asignados = models.ManyToManyField(Usuario, through='Asignacion_tarea', related_name="usuarios_asignados")
@@ -45,5 +50,9 @@ class Asignacion_tarea(models.Model):
 class Comentario(models.Model):
     contenido = models.TextField()
     fecha_comentario = models.DateTimeField(default = timezone.now)
-    autor = models.ForeignKey   (Usuario,on_delete=models.CASCADE)
+    autor = models.ForeignKey(Usuario,on_delete=models.CASCADE)
     tarea = models.ForeignKey(Tarea,on_delete=models.CASCADE)
+    
+
+
+

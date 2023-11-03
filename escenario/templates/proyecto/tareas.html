@@ -1,0 +1,11 @@
+{% extends 'principal.html' %}
+{% block cabecera %}
+    Estas son tareas
+{% endblock cabecera %}
+{% block contenido %}
+    {% for tarea in tareas_mostrar %}
+        <h3>{{tarea.titulo}}</h3>
+        <h4>{{tarea.fecha_creacion}}</h4>
+            {{tarea.proyecto.nombre}}
+    {%endfor%}
+{% endblock %}  

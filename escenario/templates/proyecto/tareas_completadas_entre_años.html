@@ -1,0 +1,10 @@
+{% extends 'principal.html' %}
+{% block cabecera %}
+    Esta es mi lista de tareas
+{% endblock cabecera %}
+{% block contenido %}
+    Tareas:
+    {%for tarea in tareas %}
+        {{tarea.titulo}}
+    {%endfor%}
+{% endblock %}  

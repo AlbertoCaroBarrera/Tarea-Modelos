@@ -1,0 +1,10 @@
+{% extends 'principal.html' %}
+{% block cabecera %}
+    Usuarios sin tareas
+{% endblock cabecera %}
+
+{% block contenido %}
+    {% for usuario in usuarios_sin_tarea %}
+        <p>{{usuario.nombre}}</p>
+    {%endfor%}
+{% endblock %}  

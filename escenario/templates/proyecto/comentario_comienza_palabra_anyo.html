@@ -1,0 +1,12 @@
+{% extends 'principal.html' %}
+{% block cabecera %}
+    Esta es mi comentario
+{% endblock cabecera %}
+
+{% block contenido %}
+    {% for comentario in comentario_comienza_palabra_anyo %}
+        {{comentario.contenido}}
+        {{comentario.fecha_comentario}}
+        <br>
+    {%endfor%}
+{% endblock %}  

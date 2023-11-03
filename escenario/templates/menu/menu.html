@@ -1,28 +1,15 @@
 <header>
     <nav class="navegacion">
         <ul class="menu">
-            <li><a href="" class="titulo">Inicio</a></li>
-            <li><a href="">link1</a></li>
-            <li><a href="">link2</a></li>
-            <li><a href="">link3</a>
-                <ul class="submenu">
-                    <li><a href="">sublink1</a></li>
-                    <li><a href="">sublink2</a></li>
-                    <li><a href="">sublink3</a></li>
-                    <li><a href="">sublink4</a></li>
-                </ul>
-            </li>
-            <li><a href="">link4</a></li>
-            <li><a href="">link5</a>
-                <ul class="submenu">
-                    <li><a href="">sublink1</a></li>
-                    <li><a href="">sublink2</a></li>
-                    <li><a href="">sublink3</a></li>
-                </ul>
-            </li>
-            <li><a href="">link6</a></li>
-            <li><a href="">link7</a></li>
-            <li><a href="">link8</a></li>
+            <li><a href="{%url 'index'%}" class="titulo">Inicio</a></li>
+            <li><a href="{%url 'lista_proyectos'%}">lista de proyectos</a></li>
+            <li><a href="{%url 'tareas' 2%}">tareas del proyecto 2</a></li>
+            <li><a href="{%url 'usuarios' 2%}">usuarios de la tarea 2</a></li>
+            <li><a href="{%url 'tareas_con_observaciones' 'a'%}">Tareas con observaciones y texto 'a'</a></li>
+            <li><a href="{%url 'tareas_completadas_entre_años' 1999 2025%}">Tareas completadas entre 1999 2025</a></li>
+            <li><a href="{%url 'ultimo_usuario_comentado' 3 %}">Ultimo usuario que ha comentado la tarea 3</a></li>
+            <li><a href="{%url 'comentario_comienza_palabra_anyo' 'a' 2023 %}">Ultimo comentario que contiene la a del año 2023</a></li>
+            <li><a href="{%url 'usuarios_sin_tarea' 3 %}">Usuario sin tarea en la tarea 3</a></li>
         </ul>
     </nav>
 </header>

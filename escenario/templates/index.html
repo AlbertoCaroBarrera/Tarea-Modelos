@@ -1,10 +1,13 @@
 {% extends 'principal.html' %}
+
+{% block cabecera %}
+    Este es mi index
+{% endblock cabecera %}
+
 {% block contenido %}
 
-    <h1>Listado de enlaces</h1>
-    <a href="{%url 'lista_proyectos'%}">Proyectos</a>
-    <ul>
-        <li><a href="{% url 'dame_tareas_texto' 'a' %}">Tareas que contienen el texto 'a'</a></li>
-    </ul>
+    <h1>Este es nuestro index!!!</h1>
     
+</body>
+</html>
 {% endblock %}
