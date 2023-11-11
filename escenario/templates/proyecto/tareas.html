@@ -5,7 +5,7 @@
 {% block contenido %}
     {% for tarea in tareas_mostrar %}
         <h3>{{tarea.titulo}}</h3>
-        <h4>{{tarea.fecha_creacion}}</h4>
+        <h4>{{tarea.fecha_creacion|date:"d-m-y"}}</h4>
             {{tarea.proyecto.nombre}}
     {%endfor%}
 {% endblock %}  

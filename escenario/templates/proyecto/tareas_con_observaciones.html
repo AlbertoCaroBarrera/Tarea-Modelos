@@ -8,9 +8,17 @@
     <ul>
         {% for tarea in tareas %}
             <li>
-                <strong>{{ tarea.titulo }}</strong><br>
-                Descripción: {{ tarea.descripcion }}<br>
+                <strong>{{ tarea.titulo|capfirst }}</strong><br>
+                Descripción: {{ tarea.descripcion|cut:" " }}<br>
                 Prioridad: {{ tarea.prioridad }}<br>
+                {% if tarea.prioridad >= 10 %}
+                Esta tarea es muy importante
+                {% elif tarea.prioridad >= 5  %}
+                Esta tarea es importante
+                {% else %}
+                Esta tarea no es importante
+                {% endif %}
+                <br>
                 Estado: {{ tarea.estados }}<br>
                 Asignada a:
                 <ul>

@@ -6,31 +6,6 @@
 {%block contenido%}
     <h1>Proyectos</h1>
     {% for proyecto in proyectos_mostrar %}
-    <div>
-        <h2>Nombre: {{proyecto.nombre}}</h2>
-        <p>Descripcion: {{proyecto.descripcion}}</p>
-        <p>Duracion: {{proyecto.duracion}}</p>
-        <p>Fecha Inicio: {{proyecto.fecha_inicio}}</p>
-        <p>Fecha Fin: {{proyecto.fecha_fin}}</p>
-        <h3>Usuario</h3>
-            {% for usuario in proyecto.usuario.all %}
-                <ul>
-                    <li>{{usuario.nombre}}</li>
-                </ul>
-            {%endfor%}
-        <p>Usuario creador: {{proyecto.creador.nombre}} </p>
-
-        <p>Tareas:<a href="{%url 'tareas' id_proyecto=proyecto.id %}">Tareas</a></p>
-        
-        
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Proyectos</title>
-        </head>
-        <body>
-    </div>
+        {% include "proyecto/proyecto.html" with proyecto=proyecto %}
     {%endfor%}
 {%endblock%}

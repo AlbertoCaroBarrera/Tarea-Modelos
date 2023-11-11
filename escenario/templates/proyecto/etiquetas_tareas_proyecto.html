@@ -5,6 +5,10 @@
 {% block contenido %}
     <h1>Etiquetas del proyecto:</h1>
     {% for etiqueta in etiquetas_tareas_proyecto %}
-        <p>{{etiqueta.nombre}} </p>
+        <p>{{etiqueta.nombre|upper}} </p>
+    {%empty%}
+        <h1>
+            No hay etiquetas
+        </h1>
     {%endfor%}
 {% endblock %}  

@@ -5,8 +5,11 @@
 
 {% block contenido %}
     {% for comentario in comentario_comienza_palabra_anyo %}
-        {{comentario.contenido}}
-        {{comentario.fecha_comentario}}
+        {% include 'proyecto/comentario.html' with comentario=comentario %}
         <br>
+    {%empty%}
+    <h1>
+    No hay comentarios
+    </h1>
     {%endfor%}
 {% endblock %}  

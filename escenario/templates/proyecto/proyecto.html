@@ -1,0 +1,17 @@
+<div>
+    <h2>Nombre: {{proyecto.nombre}}</h2>
+    <p>Descripcion: {{proyecto.descripcion}}</p>
+    <p>Duracion: {{proyecto.duracion}}</p>
+    <p>Fecha Inicio: {{proyecto.fecha_inicio|date:"d-m-y"}}</p>
+    <p>Fecha Fin: {{proyecto.fecha_fin|date:"d-m-y"}}</p>
+    <h3>Usuario</h3>
+        {% for usuario in proyecto.usuario.all %}
+            <ul>
+                <li>{{usuario.nombre|upper}}</li>
+            </ul>
+        {%endfor%}
+    <p>Usuario creador: {{proyecto.creador.nombre|upper}} </p>
+
+    <p>Tareas:<a href="{%url 'tareas' id_proyecto=proyecto.id %}">Tareas</a></p>
+    
+</div>
